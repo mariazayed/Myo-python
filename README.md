@@ -1,5 +1,5 @@
 # Myo-python
-The "myo-python" is a Python wrapping for windows myo SDK for Python developers to allow them to interact with Myo armband hardaware easily. Its compatible with Python 2 and 3
+The `myo-python` is a Python wrapping for windows myo SDK for Python developers to allow them to interact with Myo armband hardaware easily. Its compatible with Python 2 and 3
 
 # Getting Started
 * ##### Download the Myo SDK for windows from [here](https://drive.google.com/open?id=1W9d6LjeIR_TAojWxxZov8X5kI3qDDEh4)
