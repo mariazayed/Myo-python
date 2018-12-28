@@ -14,5 +14,5 @@ The `myo-python` is a Python wrapping for windows myo SDK for Python developers 
 * ##### Run the project
 <br>
 The `myo-poses` file detects the 5 built-in gestures (wave in, wave out, fist, finger spread, and double tap) in addition to the "rest" pose
-
+<br>
 The `myo-sensors` file reads the EMG and IMU sensors
