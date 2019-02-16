@@ -1,11 +1,21 @@
 import myo
 from myo.lowlevel import stream_emg
 from myo.six import print_
-from time import sleep, time
+from time import sleep
 import numpy as np
 import csv
+import os
 
 myo.init()
+
+record_id = 1
+pose_name = 'test'
+
+# flags to label the headers of CSV files
+acc_flag = False
+orien_flag = False
+gyro_flag = False
+emg_flag = False
 
 
 class Listener(myo.DeviceListener):
@@ -54,7 +64,7 @@ class Listener(myo.DeviceListener):
         self.locked = False
 
     def on_pair(self, myo, timestamp):
-        myo.set_stream_emg(1)
+        myo.set_stream_emg(stream_emg.enabled)
         print_('Paired')
 
     def on_unpair(self, myo, timestamp):
@@ -86,58 +96,90 @@ class Listener(myo.DeviceListener):
     def on_gyroscope_data(self, myo, timestamp, gyroscope):
         save_record('gyroscope', gyroscope)
 
-    def on_emg(self, myo, timestamp, emg):
+    def on_emg(self, myo, timestamp, emg,):
         save_record('emg', emg)
 
 
+# saving the sensors readings to a CSV files
 def save_record(sensor, data):
-    record_id = 1
-    path = 'training_data/pose1/record'+str(record_id)+'/'+sensor+str(record_id)+'.csv'
-    with open(path, 'a') as csvFile:
+
+    global acc_flag, orien_flag, gyro_flag, emg_flag
+
+    path = 'training_data/'+pose_name+'/record'+str(record_id)+'/'+sensor+str(record_id)+'.csv'
+    dir = 'training_data/'+pose_name+'/record'+str(record_id)
+
+    # create the directory if it doesn't exist
+    if not os.path.isdir(dir):
+        os.makedirs(dir)
+        acc_flag = True
+        orien_flag = True
+        gyro_flag = True
+        emg_flag = True
+
+    print(sensor, acc_flag, orien_flag, gyro_flag, emg_flag)
+
+    with open(path, 'a', newline='') as csvFile:
+
         writer = csv.writer(csvFile)
+
         if sensor == 'orientation':
             # calculate orientation Euler
             x = data[0]
             y = data[1]
             z = data[2]
             w = data[3]
-
+            # angles calculations
             roll = np.arctan2(2.0 * (w * x + y * z), 1.0 - 2.0 * (x * x + y * y))
             pitch = np.arcsin(max(-1.0, min(1.0, 2.0 * (w * y - z * x))))
             yaw = np.arctan2(2.0 * (w * z + x * y), 1.0 - 2.0 * (y * y + z * z))
-
+            # data vector
             raw_data = [roll, pitch, yaw]
+            # add the CSV header if the file is created
+            if orien_flag:
+                writer.writerow(['Roll', 'Pitch', 'Yaw'])
+                orien_flag = False
             writer.writerow(raw_data)
+
         elif sensor == 'acceleration':
-            print('acceleration')
+            # add the CSV header if the file is created
+            if acc_flag:
+                writer.writerow(['X', 'Y', 'Z'])
+                acc_flag = False
             writer.writerow(data)
+
         elif sensor == 'gyroscope':
-            print('gyroscope')
+            # add the CSV header if the file is created
+            if gyro_flag:
+                writer.writerow(['X', 'Y', 'Z'])
+                gyro_flag = False
             writer.writerow(data)
+
         elif sensor == 'emg':
-            print('emg')
+            # add the CSV header if the file is created
+            if emg_flag:
+                writer.writerow(['EMG1', 'EMG2', 'EMG3', 'EMG4', 'EMG5', 'EMG6', 'EMG7', 'EMG8'])
+                emg_flag = False
             writer.writerow(data)
+
     csvFile.close()
 
 
 def main():
-    # timeOut = 2
+    timeout = 1
     hub = myo.Hub()
     hub.set_locking_policy(myo.locking_policy.none)
     hub.run(1000, Listener())
-    # while timeOut > 0:
-    #     sleep(1)
-    #     timeOut -= 1
-    #     print('************************** ' + str(timeOut) + '\n')
-    # if timeOut == 0:
-    #     hub.stop(True)
 
-    # try:
-    #     while hub.running:
-    #         myo.time.sleep(10)
-    # except KeyboardInterrupt:
-    #     print_("Quitting ...")
-    #     hub.stop(True)
+    try:
+        while hub.running:
+            while timeout > 0:
+                sleep(1)
+                timeout -= 1
+                if timeout == 0:
+                    hub.stop(True)
+    except KeyboardInterrupt:
+        print_("Quitting ...")
+        hub.stop(True)
 
 
 if __name__ == '__main__':
