@@ -157,6 +157,7 @@ class vibration_type_t(Enumeration):
 
     __fallback__ = -1
 
+
 class stream_emg(Enumeration):
 
     # Do not send EMG data.
@@ -165,6 +166,7 @@ class stream_emg(Enumeration):
     enabled = 1
 
     __fallback__ = -1
+
 
 class pose_t(Enumeration):
 
@@ -177,6 +179,7 @@ class pose_t(Enumeration):
 
     __fallback__ = -1
     num_poses = Enumeration_Data(6)
+
 
 class event_type_t(Enumeration):
 
@@ -196,6 +199,7 @@ class event_type_t(Enumeration):
 
     __fallback__ = -1
 
+
 class version_component_t(Enumeration):
 
     major = 0
@@ -203,6 +207,7 @@ class version_component_t(Enumeration):
     patch = 2
 
     __fallback__ = -1
+
 
 class orientation_index_t(Enumeration):
 
