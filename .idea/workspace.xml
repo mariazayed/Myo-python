@@ -2,12 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59080542-3224-4f9c-afed-171f90960c44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/training_data/test/record1/acceleration1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training_data/test/record1/emg1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training_data/test/record1/gyroscope1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/training_data/test/record1/orientation1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Maria.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/down-sampling.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lstm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training_data/0.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/training_data/1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machine_learning/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myo-sensors.py" beforeDir="false" afterPath="$PROJECT_DIR$/myo-sensors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 1/accelerometer-1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 1/emg-1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 1/gyroscope-1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 1/orientationEuler-1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 2/accelerometer-2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 2/emg-2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 2/gyroscope-2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 2/orientationEuler-2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 3/accelerometer-3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 3/emg-3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 3/gyroscope-3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 3/orientationEuler-3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 4/accelerometer-4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 4/emg-4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 4/gyroscope-4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 4/orientationEuler-4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 5/accelerometer-5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 5/emg-5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 5/gyroscope-5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/hello/record 5/orientationEuler-5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/test/record1/acceleration1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/test/record1/emg1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/test/record1/gyroscope1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_data/test/record1/orientation1.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,71 +48,63 @@
     <session id="2043791397">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.10" value="5" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="7" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="14" />
+          <entry key="csv" value="16" />
           <entry key="h" value="3" />
           <entry key="md" value="2" />
-          <entry key="py" value="45" />
+          <entry key="py" value="59" />
           <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="C++" value="3" />
-          <entry key="CSV" value="13" />
+          <entry key="CSV" value="15" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="45" />
+          <entry key="Python" value="59" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="13" />
-          <entry key="py" value="4939" />
-          <entry key="txt" value="52" />
+          <entry key="dummy" value="26" />
+          <entry key="py" value="12200" />
+          <entry key="txt" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="65" />
-          <entry key="Python" value="4939" />
+          <entry key="PLAIN_TEXT" value="136" />
+          <entry key="Python" value="12200" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myo-poses.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/myo-sensors.py">
+        <entry file="file://$PROJECT_DIR$/lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="629">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,7 +124,15 @@
       <find>on_event</find>
       <find>hub.run</find>
       <find>on_arm_sync</find>
+      <find>save_record</find>
+      <find>save_data</find>
+      <find>label</find>
+      <find>new_csv_flag</find>
+      <find>acc_flag</find>
     </findStrings>
+    <replaceStrings>
+      <replace>save_to_separate_csv</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,20 +151,28 @@
         <option value="$PROJECT_DIR$/myo/__init__.py" />
         <option value="$PROJECT_DIR$/realtime.py" />
         <option value="$PROJECT_DIR$/myo/lowlevel.py" />
-        <option value="$PROJECT_DIR$/machine_learning/__init__.py" />
         <option value="$PROJECT_DIR$/csv-test.py" />
         <option value="$PROJECT_DIR$/source_codes/myo-sensors.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/machine_learning/knn.py" />
+        <option value="$PROJECT_DIR$/machine_learning/hmm.py" />
+        <option value="$PROJECT_DIR$/down-sampling.py" />
+        <option value="$PROJECT_DIR$/machine_learning/__init__.py" />
+        <option value="$PROJECT_DIR$/to-one-csv.py" />
         <option value="$PROJECT_DIR$/myo-sensors.py" />
+        <option value="$PROJECT_DIR$/lstm.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
+    <option name="x" value="30" />
+    <option name="y" value="-25" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -177,8 +214,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.myo-sensors (2)">
-    <configuration name="myo-poses (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.lstm">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myo-python-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -186,11 +223,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source_codes" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/machine_learning" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Maria\Desktop\myo-python\myo-poses.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/machine_learning/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,7 +236,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="myo-poses" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="down-sampling" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myo-python-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -211,7 +248,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myo-poses.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/down-sampling.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -220,7 +257,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="myo-sensors (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="lstm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myo-python-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -228,11 +265,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source_codes" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Maria\Desktop\myo-python\myo-sensors.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lstm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,7 +299,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="myo-sensors" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="to-one-csv" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myo-python-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -274,7 +311,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Maria\Desktop\myo-python\myo-sensors.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/to-one-csv.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,19 +321,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.myo-sensors" />
-      <item itemvalue="Python.myo-poses (1)" />
-      <item itemvalue="Python.myo-sensors (1)" />
-      <item itemvalue="Python.myo-poses" />
       <item itemvalue="Python.myo-sensors (2)" />
+      <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.to-one-csv" />
+      <item itemvalue="Python.down-sampling" />
+      <item itemvalue="Python.lstm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.lstm" />
         <item itemvalue="Python.myo-sensors (2)" />
-        <item itemvalue="Python.myo-poses" />
-        <item itemvalue="Python.myo-sensors (1)" />
-        <item itemvalue="Python.myo-poses (1)" />
-        <item itemvalue="Python.myo-sensors" />
+        <item itemvalue="Python.to-one-csv" />
+        <item itemvalue="Python.down-sampling" />
+        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
@@ -306,11 +343,11 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2413793" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27899686" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -321,13 +358,30 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28840125" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.20376176" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3291536" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="save the sensors readings to CSV files" />
-    <option name="LAST_COMMIT_MESSAGE" value="save the sensors readings to CSV files" />
+    <MESSAGE value="save the sensors readings to CSV files | fix the CSV styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="save the sensors readings to CSV files | fix the CSV styling" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/examples/hello_myo.py" />
@@ -366,32 +420,10 @@
         <state relative-caret-position="-1428" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="63">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/realtime.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training_data/hello/record 1/emg-1.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.csv" />
+    <entry file="file://$PROJECT_DIR$/test.csv" />
+    <entry file="file://$PROJECT_DIR$/realtime.py" />
+    <entry file="file://$PROJECT_DIR$/training_data/hello/record 1/emg-1.csv" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/myo/lowlevel/ctyping.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -406,9 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/machine_learning/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -416,41 +445,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example2.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example4.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class1.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycsv.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csv-test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="38" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example2.csv" />
+    <entry file="file://$PROJECT_DIR$/example4.csv" />
+    <entry file="file://$PROJECT_DIR$/class1.csv" />
+    <entry file="file://$PROJECT_DIR$/mycsv.csv" />
+    <entry file="file://$PROJECT_DIR$/csv-test.py" />
     <entry file="file://$PROJECT_DIR$/myo/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -459,20 +458,72 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myo-poses.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training_data/hi/1.csv" />
+    <entry file="file://$PROJECT_DIR$/training_data/hi/11.csv" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/pandas/core/indexes/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="104">
+          <caret line="4963" selection-start-line="4963" selection-end-line="4963" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/sklearn/preprocessing/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="624" selection-start-line="624" selection-end-line="624" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machine_learning/hmm.py" />
+    <entry file="file://$PROJECT_DIR$/machine_learning/knn.py" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python36/site-packages/sklearn/preprocessing/imputation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="312" selection-start-line="312" selection-end-line="312" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-one-csv.py" />
+    <entry file="file://$PROJECT_DIR$/machine_learning/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/down-sampling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="55" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#338#435#0" />
+            <element signature="e#490#890#0" />
+            <element signature="e#1092#1231#0" />
+            <element signature="e#1259#1284#0" />
+            <element signature="e#1329#1701#0" />
+            <element signature="e#1724#2094#0" />
+            <element signature="e#2134#2408#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myo-sensors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="17">
+          <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+            <marker date="1551539853616" expanded="true" signature="2558:2567" ph="..." />
+            <marker date="1551539853616" expanded="true" signature="2683:2692" ph="..." />
+            <marker date="1551539853616" expanded="true" signature="2803:2812" ph="..." />
+            <marker date="1551539853616" expanded="true" signature="2901:2910" ph="..." />
+            <marker date="1551539853616" expanded="true" signature="7045:7046" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
