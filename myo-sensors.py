@@ -2,24 +2,20 @@ import myo
 from myo.lowlevel import stream_emg
 from myo.six import print_
 from time import sleep
-import pandas as pd
-import scipy.signal as sp
 import numpy as np
 import os
 import csv
-import send2trash
 
 myo.init()
 
+timeout = 4
+counter = 9
 pose_id = 1
-pose_name = ['welcome']
+pose_name = ['where']
 
-feature_path = 'training_data/' + str(pose_id) + '.csv'
-
-emg_data = []
-gyro_data = []
-acc_data = []
-orien_data = []
+feature_dir = 'training_data/features/' + str(pose_id) + '/instance_' + str(counter)
+label_dir = 'training_data/labels/'
+label_path = label_dir + str(pose_id) + '.csv'
 
 # flags to label the headers of CSV files
 acc_flag = False
@@ -27,10 +23,10 @@ orien_flag = False
 gyro_flag = False
 emg_flag = False
 
-# headers
+# headers for CSV files
 acc_header = ['Acc_X', 'Acc_Y', 'Acc_Z']
 gyro_header = ['Gyro_X', 'Gyro_Y', 'Gyro_Z']
-orien_header = ['Roll', 'Pitch', 'Yaw']
+orien_header = ['Roll', 'Pitch', 'Yaw', 'Orien_X', 'Orien_Y', 'Orien_Z']
 emg_header = ['EMG1', 'EMG2', 'EMG3', 'EMG4', 'EMG5', 'EMG6', 'EMG7', 'EMG8']
 
 
@@ -118,16 +114,13 @@ class Listener(myo.DeviceListener):
 def save_to_separate_csv(sensor, data):
 
     global orien_flag, acc_flag, gyro_flag, emg_flag
+
     # to store the sign's feature
-    path = 'training_data/temp'+'/'+sensor+'.csv'
-    path_dir = 'training_data/temp'
-    # to store the sign's label
-    label = 'labels/'+str(pose_id)+'.csv'
-    label_dir = 'labels'
+    feature_path = feature_dir + '/' + sensor + '.csv'
 
     # create the directory if it doesn't exist
-    if not os.path.isdir(path_dir):
-        os.makedirs(path_dir)
+    if not os.path.isdir(feature_dir):
+        os.makedirs(feature_dir)
         acc_flag = True
         orien_flag = True
         gyro_flag = True
@@ -136,13 +129,13 @@ def save_to_separate_csv(sensor, data):
     if not os.path.isdir(label_dir):
         os.makedirs(label_dir)
 
-    if not os.path.isfile(label):
-        with open(label, 'a', newline='') as csvFile:
+    if not os.path.isfile(label_path):
+        with open(label_path, 'a', newline='') as csvFile:
             writer = csv.writer(csvFile)
             writer.writerow(pose_name)
         csvFile.close()
 
-    with open(path, 'a', newline='') as csvFile:
+    with open(feature_path, 'a', newline='') as csvFile:
 
         writer = csv.writer(csvFile)
 
@@ -162,7 +155,7 @@ def save_to_separate_csv(sensor, data):
                 orien_flag = False
 
             # data vector
-            raw_data = [roll, pitch, yaw]
+            raw_data = [roll, pitch, yaw, data[0], data[1], data[2]]
             writer.writerow(raw_data)
 
         elif sensor == 'acceleration':
@@ -186,63 +179,10 @@ def save_to_separate_csv(sensor, data):
     csvFile.close()
 
 
-def to_csv():
-
-    headers = emg_header + orien_header + acc_header + gyro_header
-
-    # add the csv headers if the file is newly created
-    if not os.path.isfile(feature_path):
-        with open(feature_path, 'a', newline='') as csvFile:
-            writer = csv.writer(csvFile)
-            writer.writerow(headers)
-        csvFile.close()
-
-    emg_file = pd.read_csv('training_data/temp/emg.csv')
-    orien_file = pd.read_csv('training_data/temp/orientation.csv')
-    acc_file = pd.read_csv('training_data/temp/acceleration.csv')
-    gyro_file = pd.read_csv('training_data/temp/gyroscope.csv')
-
-    emg1 = emg_downsampling(emg_file[headers[0]])
-    emg2 = emg_downsampling(emg_file[headers[1]])
-    emg3 = emg_downsampling(emg_file[headers[2]])
-    emg4 = emg_downsampling(emg_file[headers[3]])
-    emg5 = emg_downsampling(emg_file[headers[4]])
-    emg6 = emg_downsampling(emg_file[headers[5]])
-    emg7 = emg_downsampling(emg_file[headers[6]])
-    emg8 = emg_downsampling(emg_file[headers[7]])
-
-    roll = orien_file[headers[8]]
-    pitch = orien_file[headers[9]]
-    yaw = orien_file[headers[10]]
-
-    acc_x = acc_file[headers[11]]
-    acc_y = acc_file[headers[12]]
-    acc_z = acc_file[headers[13]]
-
-    gyr_x = gyro_file[headers[14]]
-    gyr_y = gyro_file[headers[15]]
-    gyr_z = gyro_file[headers[16]]
-
-    for i in range(0, emg1.__len__()):
-        temp_series = pd.Series([float(emg1[i]), float(emg2[i]), float(emg3[i]), float(emg4[i]),
-                                 float(emg5[i]), float(emg6[i]), float(emg7[i]), float(emg8[i]),
-                                 roll[i], pitch[i], yaw[i],
-                                 acc_x[i], acc_y[i], acc_z[i],
-                                 gyr_x[i], gyr_y[i], gyr_z[i]])
-        pd.DataFrame(temp_series).T.to_csv(feature_path, mode='a',  header=False, index=False)
-
-    # remove the "temp" directory
-    send2trash.send2trash('training_data/temp')
-
-
-# to change the EMG sampling rate from 200Hz to 50Hz
-def emg_downsampling(column):
-    return sp.decimate(column, 4, None, 'fir', -1, True)
-
-
 def main():
 
-    timeout = 2
+    global timeout
+
     hub = myo.Hub()
     hub.set_locking_policy(myo.locking_policy.none)
     hub.run(1000, Listener())
@@ -257,8 +197,6 @@ def main():
     except KeyboardInterrupt:
         print_("Quitting ...")
         hub.stop(True)
-
-    to_csv()
 
 
 if __name__ == '__main__':
